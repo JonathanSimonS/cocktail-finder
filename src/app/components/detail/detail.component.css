@@ -1,0 +1,49 @@
+/* section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+} */
+
+h1{
+  text-align: center;
+  color: #DCD7C9;
+  font-family: 'Bree Serif', serif;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-size: 4rem;
+}
+
+.colorTarjeta{
+  background-color: #DCD7C9;
+}
+
+li{
+  background-color: #DCD7C9;
+  font-size: 0.9rem;
+
+}
+
+.containerGlass{
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.gridButton{
+  justify-content: end;
+}
+
+.buttonGreen{
+  background-color: #344f26;
+  color: #DCD7C9;
+  font-weight: 500;
+}
+
+.buttonRed{
+  background-color: #b60335;
+  color: #DCD7C9;
+  font-weight: 500;
+}
+
+
+

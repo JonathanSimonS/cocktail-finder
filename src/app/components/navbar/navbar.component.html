@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-md" style="background-color: #DCD7C9;">
+  <div class="container-fluid">
+      <img (click)="refresh()" routerLink="home" src="../../../assets/logo_cocktail_verde.png" alt="logo">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                  <!-- Añadido nuevo -->
+                  <li class="nav-item me-3">
+                      <a class="nav-link" (click)="refresh()" routerLink="home">Home</a>
+                  </li>
+                  <!-- hasta aqui -->
+                  <li class="nav-item me-3">
+                      <a class="nav-link" routerLink="contact">Contact</a>
+                  </li>
+                  <li class="nav-item me-3">
+                      <a class="nav-link" routerLink="about">About us</a>
+                  </li>
+              </ul>
+              </div>
+          </div>
+      </nav>

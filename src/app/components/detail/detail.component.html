@@ -1,0 +1,29 @@
+<h1>{{cocktail.strDrink}}</h1>
+<section class="row d-flex justify-content-center">
+    <div class="col-md-3 col-12 d-flex justify-content-center">
+        <img src="{{cocktail.strDrinkThumb}}" class="img-fluid rounded" alt="..."></div>
+    <div class="card col-md-9 col-12 colorTarjeta" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-12">
+                <div class="card-body">
+                    <h5 class="card-title">Ingredients</h5>
+                    <ul class="list-group list-group-flush">
+                        <ng-container *ngFor="let ingrediente of ingredientes">
+                            <li class="list-group-item" *ngIf="ingrediente != null">{{ingrediente}}</li>
+                        </ng-container>
+                    </ul>
+                    <h5>Instructions</h5>
+                    <p class="card-text">{{cocktail.strInstructions}}</p>
+                    <h5>Glass</h5>
+                    <div class="containerGlass">
+                        <p class="card-text">Serve: {{cocktail.strGlass}}</p>
+                        <div class="gridButton row align-items-end" [ngSwitch]="cocktail.strAlcoholic">
+                            <button *ngSwitchCase="'Non alcoholic'" class="btn buttonGreen col-10">Non Alcoholic</button>
+                            <button *ngSwitchCase="'Alcoholic'" class="btn buttonRed col-7">Alcoholic</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

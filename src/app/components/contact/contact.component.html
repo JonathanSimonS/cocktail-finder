@@ -1,0 +1,52 @@
+
+ <!-- Contact Section-->
+<section class="" id="contact">
+  <div class="container py-5">
+      <!-- Contact Section Heading-->
+      <h1 class="text-center mb-2">Contact us</h1>
+      <!-- Icon Divider-->
+      <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+      </div>
+      <!-- Contact Section Form-->
+      <div class="row justify-content-center ">
+          <div class="col-lg-8 col-xl-7 background rounded-5 py-5 px-5">
+
+              <form [formGroup]="contactForm" (ngSubmit)="submit()" id="contactForm">
+                  <!-- Name input-->
+                  <div class="form-floating mb-3">
+                      <input formControlName="name" class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                      <label for="name">Full name</label>
+                      <small class="error" *ngIf="checkForm('name', 'required')" ngClass="required">Name is required</small>
+                      <small class="error" *ngIf="checkForm('name', 'minlength')" ngClass="minLength">Must be at least 3 characters</small>
+                  </div>
+                  <!-- Email address input-->
+                  <div class="form-floating mb-3">
+                      <input formControlName="email" class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                      <label for="email">Email address</label>
+                      <small class="error" *ngIf="checkForm('email', 'required')" ngClass="required">Email is required</small>
+                      <small class="error" *ngIf="checkForm('email', 'email')" ngClass="email">Must be a valid email</small>
+                  </div>
+                  <!-- Message input-->
+                  <div class="form-floating mb-3">
+                      <textarea formControlName="text" class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                      <label for="message">Message</label>
+                      <small class="error" *ngIf="checkForm('text', 'minlength')" ngClass="minLength">Must be at least 20 characters</small>
+                      <small class="error" *ngIf="checkForm('text', 'required')" ngClass="required">Message is required</small>
+                  </div>
+
+                  <button (click)="submit()" [disabled]="!contactForm.valid" class="btn btn-light px-5 rounded-pill shadow-sm">Submit</button>
+              </form>
+          </div>
+      </div>
+  </div>
+  <div>
+    <h3 *ngIf="enviado" class="text-center">Thank you for contacting us, we will contact you as soon as possible.</h3>
+  </div>
+</section>
+
+
+
+

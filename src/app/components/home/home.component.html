@@ -1,0 +1,67 @@
+<section class="banner">
+  <div class="text-center ">
+      <h2 class="subtitle">IT'S TIME FOR </h2>
+      <p class="cocktail">Cocktails</p>
+  </div>
+  <h1 class="my-4">Welcome to the cocktail finder</h1>
+</section>
+
+<!-- Seccion principal -->
+<section class="row mt-5 ">
+
+  <!-- Filtros -->
+  <div class="col-12 col-md-12 col-lg-2 p-3 mt-2  filtros">
+      <form action="" class="form-section p-3">
+          <label for="name" class="form-label">Search by name</label>
+          <input (input)="filtrarNombre()" [(ngModel)]="name" name="name" type="text" class="form-control" placeholder="Name"><br>
+
+          <!-- pruebas -->
+          <label for="name" class="form-label">Search by ingredient</label>
+          <input (input)="filtrar()" [(ngModel)]="ingredient" name="ingredient" id="searchIngId" type="text" class="form-control" placeholder="Ingredient">
+
+      </form>
+
+  </div>
+
+  <!-- Seccion con las cards -->
+
+<!-- Por defecto (random) -->
+  <div *ngIf="(ingredient == null || ingredient == '') && name == '' " class="row col-12 col-md-12 col-lg-10">
+      <div *ngFor="let cocktail of listaCocktails" class="col-12 col-md-6 col-lg-3 g-4 d-flex justify-content-center">
+          <div class="card w-75 border-0 rounded-5 rounded-top colorTarjeta" style="width: 18rem;">
+              <img [src]='cocktail.strDrinkThumb' class="card-img-top " alt="imagen">
+                  <div class="card-body colorTarjeta text-center rounded-5 shadow">
+                      <h5 class="card-title text-center">{{cocktail.strDrink}}</h5>
+                      <a routerLink="/detalle/{{cocktail.idDrink}}" class="btn btn-tarjeta mt-4">See more</a>
+                  </div>
+              </div>
+          </div>
+  </div>
+
+  <!-- Busqueda por nombre -->
+  <div *ngIf="name != '' && (ingredient == null || ingredient == '')" class="row col-12 col-md-12 col-lg-10">
+    <div *ngFor="let cocktail of allCocktails" class="col-12 col-md-6 col-lg-3 g-4 d-flex justify-content-center">
+        <div class="card w-75 border-0 rounded-5 rounded-top colorTarjeta" style="width: 18rem;">
+            <img [src]='cocktail.strDrinkThumb' class="card-img-top " alt="imagen">
+                <div class="card-body colorTarjeta text-center rounded-5 shadow">
+                    <h5 class="card-title text-center">{{cocktail.strDrink}}</h5>
+                    <a routerLink="/detalle/{{cocktail.idDrink}}" class="btn btn-tarjeta mt-4">See more</a>
+                </div>
+            </div>
+        </div>
+</div>
+
+<!-- Busqueda por ingrediente -->
+  <div *ngIf="(ingredient != null) && name == '' " class="row col-12 col-md-12 col-lg-10">
+    <div *ngFor="let cocktail of allCocktails" class="col-12 col-md-6 col-lg-3 g-4 d-flex justify-content-center">
+        <div class="card w-75 border-0 rounded-5 rounded-top colorTarjeta" style="width: 18rem;">
+            <img [src]='cocktail.strDrinkThumb' class="card-img-top " alt="imagen">
+                <div class="card-body colorTarjeta text-center rounded-5 shadow">
+                    <h5 class="card-title text-center">{{cocktail.strDrink}}</h5>
+                    <a routerLink="/detalle/{{cocktail.idDrink}}" class="btn btn-tarjeta mt-4">See more</a>
+                </div>
+            </div>
+        </div>
+</div>
+
+  </section>

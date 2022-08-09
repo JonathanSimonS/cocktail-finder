@@ -1,0 +1,25 @@
+.background{
+  background-color: #DCD7C9;
+}
+
+h1{
+  color: #A27B5C;
+  font-weight: 300;
+}
+
+button{
+  color: #DCD7C9;
+  background-color: #A27B5C;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+h3{
+  color: #A27B5C;
+  font-weight: 200;
+}
+
+.error{
+  color: rgb(156, 4, 4);
+}
