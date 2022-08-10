@@ -15,6 +15,8 @@ export class CocktailsService {
 
   urlName: string = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
 
+  urlId: string = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
+
 
 
   constructor(private http: HttpClient) { }
@@ -31,14 +33,12 @@ export class CocktailsService {
     return this.http.get(this.urlName + name)
   }
 
+  getById(id: string): Observable<any>{
+    return this.http.get(this.urlId + id)
+  }
 
- //POSIBLES FUTURAS IMPLEMENTACIONES
+  //POSIBLES FUTURAS IMPLEMENTACIONES
 
-  // urlId: string = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
-
-  // getById(id: string): Observable<any>{
-  //   return this.http.get(this.urlId + id)
-  // }
 
   // urlAlcoholic: string = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic"
   // urlNonAlcoholic: string = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic"
