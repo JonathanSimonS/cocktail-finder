@@ -1,6 +1,6 @@
 # Cocktail Finder
 
-Simple App to find your favourite cocktail. You can search by name and ingredient as well.
+A simple app to find your favourite cocktail that allows you to search by name or by ingredient.
 
 ## Site URL
 
