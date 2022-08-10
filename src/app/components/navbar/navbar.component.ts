@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
   refresh(): void {
     setTimeout(() => {
       window.location.reload();
-    }, 50);
+    }, 10);
 }
 
   ngOnInit(): void {
